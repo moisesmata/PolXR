@@ -151,7 +151,9 @@ public class LoadFlightLines : MonoBehaviour
             objectManipulator.enabled = true;
 
             // Link the parent to the menu
-            script.Menu = GameObject.Find("Menu");
+            // I believe this is causing the issue of radar images not being linked to the menu - there are two different menus
+            //I've renamed the one we want to "MenuAbove"
+            script.Menu = GameObject.Find("MenuAbove");
 
             // Create and place the radar mark for the minimap
             Vector3 position = meshForward.transform.position + meshForward.transform.localPosition; // TODO: this
